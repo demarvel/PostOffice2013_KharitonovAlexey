@@ -1,0 +1,57 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Banderoll
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Подробнее</h2>
+
+<fieldset>
+    <legend>Banderoll</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Registered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeclaredValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeclaredValue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Length)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Вернуться обратно", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.PensionPayment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PensionPayment</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPayment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPayment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPensioner)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPensioner)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataPayment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataPayment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Payout)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Payout)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDWorker)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDWorker)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

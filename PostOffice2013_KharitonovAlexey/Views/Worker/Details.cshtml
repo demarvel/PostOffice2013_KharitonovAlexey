@@ -1,0 +1,78 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Worker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Worker</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecondName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adrress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adrress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostIndex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostIndex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LengthOfWork)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LengthOfWork)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfEmployment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfEmployment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Wages)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Wages)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Post)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Post)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

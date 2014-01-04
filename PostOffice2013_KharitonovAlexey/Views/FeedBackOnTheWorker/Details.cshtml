@@ -1,0 +1,43 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.FeedbackOnTheWorker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FeedbackOnTheWorker</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ViewReviews)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ViewReviews)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TextReview)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TextReview)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdmResponse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdmResponse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDWorker)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDWorker)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,116 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.PostItem
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PostItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDWorker)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDWorker)
+            @Html.ValidationMessageFor(model => model.IDWorker)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sender)
+            @Html.ValidationMessageFor(model => model.Sender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SenderAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SenderAddress)
+            @Html.ValidationMessageFor(model => model.SenderAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RecipientAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RecipientAddress)
+            @Html.ValidationMessageFor(model => model.RecipientAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeDeparture)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TypeDeparture)
+            @Html.ValidationMessageFor(model => model.TypeDeparture)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostOfSending)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CostOfSending)
+            @Html.ValidationMessageFor(model => model.CostOfSending)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StatusOfMandate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StatusOfMandate)
+            @Html.ValidationMessageFor(model => model.StatusOfMandate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CashOnDelivery)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CashOnDelivery)
+            @Html.ValidationMessageFor(model => model.CashOnDelivery)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriceCOD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PriceCOD)
+            @Html.ValidationMessageFor(model => model.PriceCOD)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SentReceived)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SentReceived)
+            @Html.ValidationMessageFor(model => model.SentReceived)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FailureObtaining)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FailureObtaining)
+            @Html.ValidationMessageFor(model => model.FailureObtaining)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

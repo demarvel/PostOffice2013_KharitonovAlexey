@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PostOffice2013_KharitonovAlexey.Models.PostItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDWorker)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeDeparture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostOfSending)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusOfMandate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CashOnDelivery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceCOD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SentReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FailureObtaining)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDWorker)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeDeparture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostOfSending)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusOfMandate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CashOnDelivery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceCOD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SentReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FailureObtaining)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

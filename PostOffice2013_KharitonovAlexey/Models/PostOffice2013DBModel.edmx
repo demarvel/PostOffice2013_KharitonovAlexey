@@ -1,0 +1,1300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище PostOffice2013DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BagM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Banderoll">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+          <Property Name="DeclaredValue" Type="money" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeBrand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IDSaleOfGoods" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeedbackOnTheWorker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ViewReviews" Type="bit" Nullable="false" />
+          <Property Name="TextReview" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdmResponse" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDWorker" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Letter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+          <Property Name="FirstClass" Type="bit" Nullable="false" />
+          <Property Name="DeclaredValue" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateOfNotification" Type="datetime" Nullable="false" />
+          <Property Name="SecondNotice" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Packing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypePacking" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IDSaleOfGoods" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pensioner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecondName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adrress" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostIndex" Type="int" Nullable="false" />
+          <Property Name="SeriesOfPassport" Type="int" Nullable="false" />
+          <Property Name="NumberOfPassport" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PensionPayment">
+          <Key>
+            <PropertyRef Name="IDPayment" />
+          </Key>
+          <Property Name="IDPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPensioner" Type="int" Nullable="false" />
+          <Property Name="DataPayment" Type="datetime" Nullable="false" />
+          <Property Name="Payout" Type="money" Nullable="false" />
+          <Property Name="IDWorker" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posilka">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="DeclaredValue" Type="money" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostalContainer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="DeclaredValue" Type="money" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostCard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Payment" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDWorker" Type="int" Nullable="false" />
+          <Property Name="Sender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SenderAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecipientAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeDeparture" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CostOfSending" Type="money" Nullable="false" />
+          <Property Name="StatusOfMandate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CashOnDelivery" Type="bit" Nullable="false" />
+          <Property Name="PriceCOD" Type="money" />
+          <Property Name="SentReceived" Type="bit" Nullable="false" />
+          <Property Name="FailureObtaining" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PostOffice">
+          <Key>
+            <PropertyRef Name="PostIndex" />
+          </Key>
+          <Property Name="PostIndex" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpeningHours" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SaleOfGoods">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeOfPurchase" Type="datetime" Nullable="false" />
+          <Property Name="TotalPrice" Type="money" Nullable="false" />
+          <Property Name="NumberOfPurchasedGoods" Type="int" Nullable="false" />
+          <Property Name="IDWorker" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Secogramma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" />
+        </EntityType>
+        <EntityType Name="SmallPacket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPostItem" Type="int" Nullable="false" />
+          <Property Name="Registered" Type="bit" Nullable="false" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Payment" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecondName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adrress" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostIndex" Type="int" Nullable="false" />
+          <Property Name="LengthOfWork" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfEmployment" Type="date" Nullable="false" />
+          <Property Name="Wages" Type="money" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BagM_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="BagM" Type="Self.BagM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BagM">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Banderoll_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Banderoll" Type="Self.Banderoll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Banderoll">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Brand_SaleOfGoods">
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="1" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOfGoods">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="IDSaleOfGoods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeedbackOnTheWorker_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="FeedbackOnTheWorker" Type="Self.FeedbackOnTheWorker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedbackOnTheWorker">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Letter_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Letter" Type="Self.Letter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Letter">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notice_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Notice" Type="Self.Notice" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notice">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packing_SaleOfGoods">
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="1" />
+          <End Role="Packing" Type="Self.Packing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOfGoods">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Packing">
+              <PropertyRef Name="IDSaleOfGoods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pensioner_PostOffice">
+          <End Role="PostOffice" Type="Self.PostOffice" Multiplicity="1" />
+          <End Role="Pensioner" Type="Self.Pensioner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostOffice">
+              <PropertyRef Name="PostIndex" />
+            </Principal>
+            <Dependent Role="Pensioner">
+              <PropertyRef Name="PostIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PensionPayment_Pensioner">
+          <End Role="Pensioner" Type="Self.Pensioner" Multiplicity="1" />
+          <End Role="PensionPayment" Type="Self.PensionPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pensioner">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PensionPayment">
+              <PropertyRef Name="IDPensioner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PensionPayment_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="PensionPayment" Type="Self.PensionPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PensionPayment">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posilka_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Posilka" Type="Self.Posilka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Posilka">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostalContainer_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="PostalContainer" Type="Self.PostalContainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostalContainer">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostCard_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="PostCard" Type="Self.PostCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostCard">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostItem_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostItem">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOfGoods_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SaleOfGoods">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secogramma_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Secogramma" Type="Self.Secogramma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Secogramma">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmallPacket_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="SmallPacket" Type="Self.SmallPacket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SmallPacket">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_PostOffice">
+          <End Role="PostOffice" Type="Self.PostOffice" Multiplicity="1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostOffice">
+              <PropertyRef Name="PostIndex" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="PostIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище PostOffice2013DBModelContainer">
+          <EntitySet Name="BagM" EntityType="Self.BagM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Banderoll" EntityType="Self.Banderoll" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedbackOnTheWorker" EntityType="Self.FeedbackOnTheWorker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Letter" EntityType="Self.Letter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notice" EntityType="Self.Notice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Packing" EntityType="Self.Packing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pensioner" EntityType="Self.Pensioner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PensionPayment" EntityType="Self.PensionPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Posilka" EntityType="Self.Posilka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostalContainer" EntityType="Self.PostalContainer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostCard" EntityType="Self.PostCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostItem" EntityType="Self.PostItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostOffice" EntityType="Self.PostOffice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleOfGoods" EntityType="Self.SaleOfGoods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Secogramma" EntityType="Self.Secogramma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmallPacket" EntityType="Self.SmallPacket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BagM_PostItem" Association="Self.FK_BagM_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="BagM" EntitySet="BagM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Banderoll_PostItem" Association="Self.FK_Banderoll_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Banderoll" EntitySet="Banderoll" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Brand_SaleOfGoods" Association="Self.FK_Brand_SaleOfGoods">
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+            <End Role="Brand" EntitySet="Brand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeedbackOnTheWorker_Worker" Association="Self.FK_FeedbackOnTheWorker_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="FeedbackOnTheWorker" EntitySet="FeedbackOnTheWorker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Letter_PostItem" Association="Self.FK_Letter_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Letter" EntitySet="Letter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notice_PostItem" Association="Self.FK_Notice_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Notice" EntitySet="Notice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packing_SaleOfGoods" Association="Self.FK_Packing_SaleOfGoods">
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+            <End Role="Packing" EntitySet="Packing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pensioner_PostOffice" Association="Self.FK_Pensioner_PostOffice">
+            <End Role="PostOffice" EntitySet="PostOffice" />
+            <End Role="Pensioner" EntitySet="Pensioner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PensionPayment_Pensioner" Association="Self.FK_PensionPayment_Pensioner">
+            <End Role="Pensioner" EntitySet="Pensioner" />
+            <End Role="PensionPayment" EntitySet="PensionPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PensionPayment_Worker" Association="Self.FK_PensionPayment_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="PensionPayment" EntitySet="PensionPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posilka_PostItem" Association="Self.FK_Posilka_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Posilka" EntitySet="Posilka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostalContainer_PostItem" Association="Self.FK_PostalContainer_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="PostalContainer" EntitySet="PostalContainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostCard_PostItem" Association="Self.FK_PostCard_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="PostCard" EntitySet="PostCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostItem_Worker" Association="Self.FK_PostItem_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="PostItem" EntitySet="PostItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOfGoods_Worker" Association="Self.FK_SaleOfGoods_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secogramma_PostItem" Association="Self.FK_Secogramma_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Secogramma" EntitySet="Secogramma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmallPacket_PostItem" Association="Self.FK_SmallPacket_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="SmallPacket" EntitySet="SmallPacket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_PostOffice" Association="Self.FK_Worker_PostOffice">
+            <End Role="PostOffice" EntitySet="PostOffice" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PostOffice2013DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BagM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_BagM_PostItem" FromRole="BagM" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="Banderoll">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <Property Name="DeclaredValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_Banderoll_PostItem" FromRole="Banderoll" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IDSaleOfGoods" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SaleOfGoods" Relationship="Self.FK_Brand_SaleOfGoods" FromRole="Brand" ToRole="SaleOfGoods" />
+        </EntityType>
+        <EntityType Name="FeedbackOnTheWorker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ViewReviews" Type="Boolean" Nullable="false" />
+          <Property Name="TextReview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdmResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDWorker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_FeedbackOnTheWorker_Worker" FromRole="FeedbackOnTheWorker" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Letter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <Property Name="FirstClass" Type="Boolean" Nullable="false" />
+          <Property Name="DeclaredValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_Letter_PostItem" FromRole="Letter" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="Notice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DateOfNotification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SecondNotice" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_Notice_PostItem" FromRole="Notice" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="Packing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypePacking" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IDSaleOfGoods" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SaleOfGoods" Relationship="Self.FK_Packing_SaleOfGoods" FromRole="Packing" ToRole="SaleOfGoods" />
+        </EntityType>
+        <EntityType Name="Pensioner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adrress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostIndex" Type="Int32" Nullable="false" />
+          <Property Name="SeriesOfPassport" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfPassport" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PostOffice" Relationship="Self.FK_Pensioner_PostOffice" FromRole="Pensioner" ToRole="PostOffice" />
+          <NavigationProperty Name="PensionPayment" Relationship="Self.FK_PensionPayment_Pensioner" FromRole="Pensioner" ToRole="PensionPayment" />
+        </EntityType>
+        <EntityType Name="PensionPayment">
+          <Key>
+            <PropertyRef Name="IDPayment" />
+          </Key>
+          <Property Name="IDPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPensioner" Type="Int32" Nullable="false" />
+          <Property Name="DataPayment" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Payout" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="IDWorker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pensioner" Relationship="Self.FK_PensionPayment_Pensioner" FromRole="PensionPayment" ToRole="Pensioner" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_PensionPayment_Worker" FromRole="PensionPayment" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Posilka">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="DeclaredValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_Posilka_PostItem" FromRole="Posilka" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="PostalContainer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="DeclaredValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_PostalContainer_PostItem" FromRole="PostalContainer" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="PostCard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Payment" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_PostCard_PostItem" FromRole="PostCard" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="PostItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDWorker" Type="Int32" Nullable="false" />
+          <Property Name="Sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SenderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecipientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeDeparture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CostOfSending" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="StatusOfMandate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CashOnDelivery" Type="Boolean" Nullable="false" />
+          <Property Name="PriceCOD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SentReceived" Type="Boolean" Nullable="false" />
+          <Property Name="FailureObtaining" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BagM" Relationship="Self.FK_BagM_PostItem" FromRole="PostItem" ToRole="BagM" />
+          <NavigationProperty Name="Banderoll" Relationship="Self.FK_Banderoll_PostItem" FromRole="PostItem" ToRole="Banderoll" />
+          <NavigationProperty Name="Letter" Relationship="Self.FK_Letter_PostItem" FromRole="PostItem" ToRole="Letter" />
+          <NavigationProperty Name="Notice" Relationship="Self.FK_Notice_PostItem" FromRole="PostItem" ToRole="Notice" />
+          <NavigationProperty Name="Posilka" Relationship="Self.FK_Posilka_PostItem" FromRole="PostItem" ToRole="Posilka" />
+          <NavigationProperty Name="PostalContainer" Relationship="Self.FK_PostalContainer_PostItem" FromRole="PostItem" ToRole="PostalContainer" />
+          <NavigationProperty Name="PostCard" Relationship="Self.FK_PostCard_PostItem" FromRole="PostItem" ToRole="PostCard" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_PostItem_Worker" FromRole="PostItem" ToRole="Worker" />
+          <NavigationProperty Name="Secogramma" Relationship="Self.FK_Secogramma_PostItem" FromRole="PostItem" ToRole="Secogramma" />
+          <NavigationProperty Name="SmallPacket" Relationship="Self.FK_SmallPacket_PostItem" FromRole="PostItem" ToRole="SmallPacket" />
+        </EntityType>
+        <EntityType Name="PostOffice">
+          <Key>
+            <PropertyRef Name="PostIndex" />
+          </Key>
+          <Property Name="PostIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OpeningHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Pensioner" Relationship="Self.FK_Pensioner_PostOffice" FromRole="PostOffice" ToRole="Pensioner" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_PostOffice" FromRole="PostOffice" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="SaleOfGoods">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeOfPurchase" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NumberOfPurchasedGoods" Type="Int32" Nullable="false" />
+          <Property Name="IDWorker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_Brand_SaleOfGoods" FromRole="SaleOfGoods" ToRole="Brand" />
+          <NavigationProperty Name="Packing" Relationship="Self.FK_Packing_SaleOfGoods" FromRole="SaleOfGoods" ToRole="Packing" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_SaleOfGoods_Worker" FromRole="SaleOfGoods" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Secogramma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_Secogramma_PostItem" FromRole="Secogramma" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="SmallPacket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPostItem" Type="Int32" Nullable="false" />
+          <Property Name="Registered" Type="Boolean" Nullable="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Payment" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_SmallPacket_PostItem" FromRole="SmallPacket" ToRole="PostItem" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adrress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostIndex" Type="Int32" Nullable="false" />
+          <Property Name="LengthOfWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfEmployment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Wages" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FeedbackOnTheWorker" Relationship="Self.FK_FeedbackOnTheWorker_Worker" FromRole="Worker" ToRole="FeedbackOnTheWorker" />
+          <NavigationProperty Name="PensionPayment" Relationship="Self.FK_PensionPayment_Worker" FromRole="Worker" ToRole="PensionPayment" />
+          <NavigationProperty Name="PostItem" Relationship="Self.FK_PostItem_Worker" FromRole="Worker" ToRole="PostItem" />
+          <NavigationProperty Name="PostOffice" Relationship="Self.FK_Worker_PostOffice" FromRole="Worker" ToRole="PostOffice" />
+          <NavigationProperty Name="SaleOfGoods" Relationship="Self.FK_SaleOfGoods_Worker" FromRole="Worker" ToRole="SaleOfGoods" />
+        </EntityType>
+        <Association Name="FK_BagM_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="BagM" Type="Self.BagM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BagM">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Banderoll_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Banderoll" Type="Self.Banderoll" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Banderoll">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Brand_SaleOfGoods">
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="1" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOfGoods">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="IDSaleOfGoods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeedbackOnTheWorker_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="FeedbackOnTheWorker" Type="Self.FeedbackOnTheWorker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeedbackOnTheWorker">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Letter_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Letter" Type="Self.Letter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Letter">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notice_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Notice" Type="Self.Notice" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notice">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packing_SaleOfGoods">
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="1" />
+          <End Role="Packing" Type="Self.Packing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOfGoods">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Packing">
+              <PropertyRef Name="IDSaleOfGoods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pensioner_PostOffice">
+          <End Role="PostOffice" Type="Self.PostOffice" Multiplicity="1" />
+          <End Role="Pensioner" Type="Self.Pensioner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostOffice">
+              <PropertyRef Name="PostIndex" />
+            </Principal>
+            <Dependent Role="Pensioner">
+              <PropertyRef Name="PostIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PensionPayment_Pensioner">
+          <End Role="Pensioner" Type="Self.Pensioner" Multiplicity="1" />
+          <End Role="PensionPayment" Type="Self.PensionPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pensioner">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PensionPayment">
+              <PropertyRef Name="IDPensioner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PensionPayment_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="PensionPayment" Type="Self.PensionPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PensionPayment">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posilka_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Posilka" Type="Self.Posilka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Posilka">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostalContainer_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="PostalContainer" Type="Self.PostalContainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostalContainer">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostCard_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="PostCard" Type="Self.PostCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostCard">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostItem_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PostItem">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secogramma_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="Secogramma" Type="Self.Secogramma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Secogramma">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmallPacket_PostItem">
+          <End Role="PostItem" Type="Self.PostItem" Multiplicity="1" />
+          <End Role="SmallPacket" Type="Self.SmallPacket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostItem">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SmallPacket">
+              <PropertyRef Name="IDPostItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_PostOffice">
+          <End Role="PostOffice" Type="Self.PostOffice" Multiplicity="1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostOffice">
+              <PropertyRef Name="PostIndex" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="PostIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOfGoods_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="SaleOfGoods" Type="Self.SaleOfGoods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SaleOfGoods">
+              <PropertyRef Name="IDWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PostOffice2013DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BagM" EntityType="Self.BagM" />
+          <EntitySet Name="Banderoll" EntityType="Self.Banderoll" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" />
+          <EntitySet Name="FeedbackOnTheWorker" EntityType="Self.FeedbackOnTheWorker" />
+          <EntitySet Name="Letter" EntityType="Self.Letter" />
+          <EntitySet Name="Notice" EntityType="Self.Notice" />
+          <EntitySet Name="Packing" EntityType="Self.Packing" />
+          <EntitySet Name="Pensioner" EntityType="Self.Pensioner" />
+          <EntitySet Name="PensionPayment" EntityType="Self.PensionPayment" />
+          <EntitySet Name="Posilka" EntityType="Self.Posilka" />
+          <EntitySet Name="PostalContainer" EntityType="Self.PostalContainer" />
+          <EntitySet Name="PostCard" EntityType="Self.PostCard" />
+          <EntitySet Name="PostItem" EntityType="Self.PostItem" />
+          <EntitySet Name="PostOffice" EntityType="Self.PostOffice" />
+          <EntitySet Name="SaleOfGoods" EntityType="Self.SaleOfGoods" />
+          <EntitySet Name="Secogramma" EntityType="Self.Secogramma" />
+          <EntitySet Name="SmallPacket" EntityType="Self.SmallPacket" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" />
+          <AssociationSet Name="FK_BagM_PostItem" Association="Self.FK_BagM_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="BagM" EntitySet="BagM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Banderoll_PostItem" Association="Self.FK_Banderoll_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Banderoll" EntitySet="Banderoll" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Brand_SaleOfGoods" Association="Self.FK_Brand_SaleOfGoods">
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+            <End Role="Brand" EntitySet="Brand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeedbackOnTheWorker_Worker" Association="Self.FK_FeedbackOnTheWorker_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="FeedbackOnTheWorker" EntitySet="FeedbackOnTheWorker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Letter_PostItem" Association="Self.FK_Letter_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Letter" EntitySet="Letter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notice_PostItem" Association="Self.FK_Notice_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Notice" EntitySet="Notice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packing_SaleOfGoods" Association="Self.FK_Packing_SaleOfGoods">
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+            <End Role="Packing" EntitySet="Packing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pensioner_PostOffice" Association="Self.FK_Pensioner_PostOffice">
+            <End Role="PostOffice" EntitySet="PostOffice" />
+            <End Role="Pensioner" EntitySet="Pensioner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PensionPayment_Pensioner" Association="Self.FK_PensionPayment_Pensioner">
+            <End Role="Pensioner" EntitySet="Pensioner" />
+            <End Role="PensionPayment" EntitySet="PensionPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PensionPayment_Worker" Association="Self.FK_PensionPayment_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="PensionPayment" EntitySet="PensionPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posilka_PostItem" Association="Self.FK_Posilka_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Posilka" EntitySet="Posilka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostalContainer_PostItem" Association="Self.FK_PostalContainer_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="PostalContainer" EntitySet="PostalContainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostCard_PostItem" Association="Self.FK_PostCard_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="PostCard" EntitySet="PostCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostItem_Worker" Association="Self.FK_PostItem_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="PostItem" EntitySet="PostItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secogramma_PostItem" Association="Self.FK_Secogramma_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="Secogramma" EntitySet="Secogramma" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmallPacket_PostItem" Association="Self.FK_SmallPacket_PostItem">
+            <End Role="PostItem" EntitySet="PostItem" />
+            <End Role="SmallPacket" EntitySet="SmallPacket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_PostOffice" Association="Self.FK_Worker_PostOffice">
+            <End Role="PostOffice" EntitySet="PostOffice" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOfGoods_Worker" Association="Self.FK_SaleOfGoods_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="SaleOfGoods" EntitySet="SaleOfGoods" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PostOffice2013DBModelContainer" CdmEntityContainer="PostOffice2013DBEntities1">
+          <EntitySetMapping Name="BagM">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.BagM">
+              <MappingFragment StoreEntitySet="BagM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banderoll">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Banderoll">
+              <MappingFragment StoreEntitySet="Banderoll">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeBrand" ColumnName="TypeBrand" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="IDSaleOfGoods" ColumnName="IDSaleOfGoods" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedbackOnTheWorker">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.FeedbackOnTheWorker">
+              <MappingFragment StoreEntitySet="FeedbackOnTheWorker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ViewReviews" ColumnName="ViewReviews" />
+                <ScalarProperty Name="TextReview" ColumnName="TextReview" />
+                <ScalarProperty Name="AdmResponse" ColumnName="AdmResponse" />
+                <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Letter">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Letter">
+              <MappingFragment StoreEntitySet="Letter">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="FirstClass" ColumnName="FirstClass" />
+                <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notice">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Notice">
+              <MappingFragment StoreEntitySet="Notice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DateOfNotification" ColumnName="DateOfNotification" />
+                <ScalarProperty Name="SecondNotice" ColumnName="SecondNotice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packing">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Packing">
+              <MappingFragment StoreEntitySet="Packing">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypePacking" ColumnName="TypePacking" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="IDSaleOfGoods" ColumnName="IDSaleOfGoods" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pensioner">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Pensioner">
+              <MappingFragment StoreEntitySet="Pensioner">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Adrress" ColumnName="Adrress" />
+                <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+                <ScalarProperty Name="SeriesOfPassport" ColumnName="SeriesOfPassport" />
+                <ScalarProperty Name="NumberOfPassport" ColumnName="NumberOfPassport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PensionPayment">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.PensionPayment">
+              <MappingFragment StoreEntitySet="PensionPayment">
+                <ScalarProperty Name="IDPayment" ColumnName="IDPayment" />
+                <ScalarProperty Name="IDPensioner" ColumnName="IDPensioner" />
+                <ScalarProperty Name="DataPayment" ColumnName="DataPayment" />
+                <ScalarProperty Name="Payout" ColumnName="Payout" />
+                <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posilka">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Posilka">
+              <MappingFragment StoreEntitySet="Posilka">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostalContainer">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.PostalContainer">
+              <MappingFragment StoreEntitySet="PostalContainer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostCard">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.PostCard">
+              <MappingFragment StoreEntitySet="PostCard">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostItem">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.PostItem">
+              <MappingFragment StoreEntitySet="PostItem">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="SenderAddress" ColumnName="SenderAddress" />
+                <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+                <ScalarProperty Name="TypeDeparture" ColumnName="TypeDeparture" />
+                <ScalarProperty Name="CostOfSending" ColumnName="CostOfSending" />
+                <ScalarProperty Name="StatusOfMandate" ColumnName="StatusOfMandate" />
+                <ScalarProperty Name="CashOnDelivery" ColumnName="CashOnDelivery" />
+                <ScalarProperty Name="PriceCOD" ColumnName="PriceCOD" />
+                <ScalarProperty Name="SentReceived" ColumnName="SentReceived" />
+                <ScalarProperty Name="FailureObtaining" ColumnName="FailureObtaining" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostOffice">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.PostOffice">
+              <MappingFragment StoreEntitySet="PostOffice">
+                <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="OpeningHours" ColumnName="OpeningHours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleOfGoods">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.SaleOfGoods">
+              <MappingFragment StoreEntitySet="SaleOfGoods">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TimeOfPurchase" ColumnName="TimeOfPurchase" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="NumberOfPurchasedGoods" ColumnName="NumberOfPurchasedGoods" />
+                <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Secogramma">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Secogramma">
+              <MappingFragment StoreEntitySet="Secogramma">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmallPacket">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.SmallPacket">
+              <MappingFragment StoreEntitySet="SmallPacket">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+                <ScalarProperty Name="Registered" ColumnName="Registered" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Worker">
+            <EntityTypeMapping TypeName="PostOffice2013DBModel.Worker">
+              <MappingFragment StoreEntitySet="Worker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Adrress" ColumnName="Adrress" />
+                <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+                <ScalarProperty Name="LengthOfWork" ColumnName="LengthOfWork" />
+                <ScalarProperty Name="DateOfEmployment" ColumnName="DateOfEmployment" />
+                <ScalarProperty Name="Wages" ColumnName="Wages" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

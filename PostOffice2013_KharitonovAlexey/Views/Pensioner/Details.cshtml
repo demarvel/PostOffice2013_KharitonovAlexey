@@ -1,0 +1,64 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Pensioner
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pensioner</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecondName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adrress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adrress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostIndex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostIndex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SeriesOfPassport)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SeriesOfPassport)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfPassport)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfPassport)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

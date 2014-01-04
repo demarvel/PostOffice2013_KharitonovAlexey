@@ -1,0 +1,43 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Letter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Letter</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPostItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPostItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Registered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstClass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstClass)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeclaredValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeclaredValue)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

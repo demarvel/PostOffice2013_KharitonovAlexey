@@ -1,0 +1,60 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.FeedbackOnTheWorker
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FeedbackOnTheWorker</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ViewReviews)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ViewReviews)
+            @Html.ValidationMessageFor(model => model.ViewReviews)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TextReview)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TextReview)
+            @Html.ValidationMessageFor(model => model.TextReview)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdmResponse)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdmResponse)
+            @Html.ValidationMessageFor(model => model.AdmResponse)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDWorker)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDWorker)
+            @Html.ValidationMessageFor(model => model.IDWorker)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

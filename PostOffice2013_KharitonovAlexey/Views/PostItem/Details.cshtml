@@ -1,0 +1,92 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.PostItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PostItem</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDWorker)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDWorker)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SenderAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SenderAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RecipientAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RecipientAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TypeDeparture)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TypeDeparture)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CostOfSending)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CostOfSending)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusOfMandate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusOfMandate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CashOnDelivery)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CashOnDelivery)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceCOD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceCOD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SentReceived)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SentReceived)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FailureObtaining)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FailureObtaining)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

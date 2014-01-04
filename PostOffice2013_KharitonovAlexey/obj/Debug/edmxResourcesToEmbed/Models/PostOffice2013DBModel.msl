@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище PostOffice2013DBModelContainer" CdmEntityContainer="PostOffice2013DBEntities1">
+    <EntitySetMapping Name="BagM">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.BagM">
+        <MappingFragment StoreEntitySet="BagM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banderoll">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Banderoll">
+        <MappingFragment StoreEntitySet="Banderoll">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeBrand" ColumnName="TypeBrand" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="IDSaleOfGoods" ColumnName="IDSaleOfGoods" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedbackOnTheWorker">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.FeedbackOnTheWorker">
+        <MappingFragment StoreEntitySet="FeedbackOnTheWorker">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ViewReviews" ColumnName="ViewReviews" />
+          <ScalarProperty Name="TextReview" ColumnName="TextReview" />
+          <ScalarProperty Name="AdmResponse" ColumnName="AdmResponse" />
+          <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Letter">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Letter">
+        <MappingFragment StoreEntitySet="Letter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="FirstClass" ColumnName="FirstClass" />
+          <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notice">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Notice">
+        <MappingFragment StoreEntitySet="Notice">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateOfNotification" ColumnName="DateOfNotification" />
+          <ScalarProperty Name="SecondNotice" ColumnName="SecondNotice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packing">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Packing">
+        <MappingFragment StoreEntitySet="Packing">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypePacking" ColumnName="TypePacking" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="IDSaleOfGoods" ColumnName="IDSaleOfGoods" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pensioner">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Pensioner">
+        <MappingFragment StoreEntitySet="Pensioner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="Adrress" ColumnName="Adrress" />
+          <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+          <ScalarProperty Name="SeriesOfPassport" ColumnName="SeriesOfPassport" />
+          <ScalarProperty Name="NumberOfPassport" ColumnName="NumberOfPassport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PensionPayment">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.PensionPayment">
+        <MappingFragment StoreEntitySet="PensionPayment">
+          <ScalarProperty Name="IDPayment" ColumnName="IDPayment" />
+          <ScalarProperty Name="IDPensioner" ColumnName="IDPensioner" />
+          <ScalarProperty Name="DataPayment" ColumnName="DataPayment" />
+          <ScalarProperty Name="Payout" ColumnName="Payout" />
+          <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posilka">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Posilka">
+        <MappingFragment StoreEntitySet="Posilka">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostalContainer">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.PostalContainer">
+        <MappingFragment StoreEntitySet="PostalContainer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="DeclaredValue" ColumnName="DeclaredValue" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostCard">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.PostCard">
+        <MappingFragment StoreEntitySet="PostCard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostItem">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.PostItem">
+        <MappingFragment StoreEntitySet="PostItem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="SenderAddress" ColumnName="SenderAddress" />
+          <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+          <ScalarProperty Name="TypeDeparture" ColumnName="TypeDeparture" />
+          <ScalarProperty Name="CostOfSending" ColumnName="CostOfSending" />
+          <ScalarProperty Name="StatusOfMandate" ColumnName="StatusOfMandate" />
+          <ScalarProperty Name="CashOnDelivery" ColumnName="CashOnDelivery" />
+          <ScalarProperty Name="PriceCOD" ColumnName="PriceCOD" />
+          <ScalarProperty Name="SentReceived" ColumnName="SentReceived" />
+          <ScalarProperty Name="FailureObtaining" ColumnName="FailureObtaining" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostOffice">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.PostOffice">
+        <MappingFragment StoreEntitySet="PostOffice">
+          <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="OpeningHours" ColumnName="OpeningHours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOfGoods">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.SaleOfGoods">
+        <MappingFragment StoreEntitySet="SaleOfGoods">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TimeOfPurchase" ColumnName="TimeOfPurchase" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="NumberOfPurchasedGoods" ColumnName="NumberOfPurchasedGoods" />
+          <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secogramma">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Secogramma">
+        <MappingFragment StoreEntitySet="Secogramma">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmallPacket">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.SmallPacket">
+        <MappingFragment StoreEntitySet="SmallPacket">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDPostItem" ColumnName="IDPostItem" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Worker">
+      <EntityTypeMapping TypeName="PostOffice2013DBModel.Worker">
+        <MappingFragment StoreEntitySet="Worker">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="Adrress" ColumnName="Adrress" />
+          <ScalarProperty Name="PostIndex" ColumnName="PostIndex" />
+          <ScalarProperty Name="LengthOfWork" ColumnName="LengthOfWork" />
+          <ScalarProperty Name="DateOfEmployment" ColumnName="DateOfEmployment" />
+          <ScalarProperty Name="Wages" ColumnName="Wages" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

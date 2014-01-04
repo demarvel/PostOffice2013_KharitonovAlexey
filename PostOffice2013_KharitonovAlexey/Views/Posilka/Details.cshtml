@@ -1,0 +1,57 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Posilka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Posilka</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPostItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPostItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeclaredValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeclaredValue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Width)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Width)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Length)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

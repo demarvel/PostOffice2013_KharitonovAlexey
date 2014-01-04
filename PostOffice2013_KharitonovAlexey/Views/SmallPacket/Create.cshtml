@@ -1,0 +1,60 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.SmallPacket
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SmallPacket</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDPostItem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDPostItem)
+            @Html.ValidationMessageFor(model => model.IDPostItem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Registered)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Registered)
+            @Html.ValidationMessageFor(model => model.Registered)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Weight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Weight)
+            @Html.ValidationMessageFor(model => model.Weight)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Payment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Payment)
+            @Html.ValidationMessageFor(model => model.Payment)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

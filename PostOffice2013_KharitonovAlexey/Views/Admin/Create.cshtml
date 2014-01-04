@@ -1,0 +1,101 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Worker
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Worker</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SecondName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SecondName)
+            @Html.ValidationMessageFor(model => model.SecondName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adrress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Adrress)
+            @Html.ValidationMessageFor(model => model.Adrress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostIndex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostIndex)
+            @Html.ValidationMessageFor(model => model.PostIndex)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LengthOfWork)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LengthOfWork)
+            @Html.ValidationMessageFor(model => model.LengthOfWork)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfEmployment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfEmployment)
+            @Html.ValidationMessageFor(model => model.DateOfEmployment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Wages)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Wages)
+            @Html.ValidationMessageFor(model => model.Wages)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Post)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Post)
+            @Html.ValidationMessageFor(model => model.Post)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

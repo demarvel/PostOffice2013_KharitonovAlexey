@@ -1,0 +1,43 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.PostOffice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PostOffice</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostIndex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostIndex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OpeningHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OpeningHours)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Letter
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Letter</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPostItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPostItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Registered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstClass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstClass)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeclaredValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeclaredValue)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

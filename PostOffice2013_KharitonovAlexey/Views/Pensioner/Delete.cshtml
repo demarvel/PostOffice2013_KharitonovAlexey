@@ -1,0 +1,68 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Pensioner
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Pensioner</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecondName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Adrress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Adrress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostIndex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostIndex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SeriesOfPassport)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SeriesOfPassport)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberOfPassport)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfPassport)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

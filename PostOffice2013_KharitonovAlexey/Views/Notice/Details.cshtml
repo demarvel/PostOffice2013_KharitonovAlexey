@@ -1,0 +1,29 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Notice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Notice</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateOfNotification)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfNotification)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecondNotice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondNotice)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

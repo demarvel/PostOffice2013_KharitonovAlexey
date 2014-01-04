@@ -1,0 +1,62 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.Packing
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Packing</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypePacking)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TypePacking)
+            @Html.ValidationMessageFor(model => model.TypePacking)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cost)
+            @Html.ValidationMessageFor(model => model.Cost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Count)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Count)
+            @Html.ValidationMessageFor(model => model.Count)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDSaleOfGoods)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDSaleOfGoods)
+            @Html.ValidationMessageFor(model => model.IDSaleOfGoods)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

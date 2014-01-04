@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb6f562dfead483eba217e9bc1f75057" Name="Diagram1">
+        <EntityTypeShape EntityType="PostOffice2013DBModel.BagM" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Banderoll" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Brand" Width="1.5" PointX="7.5" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.FeedbackOnTheWorker" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Letter" Width="1.5" PointX="7.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Notice" Width="1.5" PointX="7.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Packing" Width="1.5" PointX="7.5" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Pensioner" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.PensionPayment" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Posilka" Width="1.5" PointX="7.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.PostalContainer" Width="1.5" PointX="7.5" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.PostCard" Width="1.5" PointX="7.5" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.PostItem" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.PostOffice" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.SaleOfGoods" Width="1.5" PointX="5.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Secogramma" Width="1.5" PointX="7.5" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.SmallPacket" Width="1.5" PointX="7.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostOffice2013DBModel.Worker" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_BagM_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Banderoll_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Brand_SaleOfGoods" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_FeedbackOnTheWorker_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Letter_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Notice_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Packing_SaleOfGoods" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Pensioner_PostOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_PensionPayment_Pensioner" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_PensionPayment_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Posilka_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_PostalContainer_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_PostCard_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_PostItem_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Secogramma_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_SmallPacket_PostItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_Worker_PostOffice" ManuallyRouted="false" />
+        <AssociationConnector Association="PostOffice2013DBModel.FK_SaleOfGoods_Worker" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

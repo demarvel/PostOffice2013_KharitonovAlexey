@@ -1,0 +1,40 @@
+﻿@model PostOffice2013_KharitonovAlexey.Models.BagM
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить отправление?</h3>
+<fieldset>
+    <legend>BagM</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDPostItem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDPostItem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Registered)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registered)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Вернуться обратно", "Index")
+    </p>
+}
